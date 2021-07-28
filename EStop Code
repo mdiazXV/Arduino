@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+const int button = 8;            // GPIO 8 for the button
+const int motor =6;                // GPIO 6 for the motor
+int motorflag=0;                   // motor status flag
+
+void setup() {
+  pinMode(button,INPUT);         // define button as an input
+  pinMode(motor,OUTPUT);           // define motor as an output
+  digitalWrite(motor,LOW);         // turn output off just in case
+}
+
+void loop() {
+  if (digitalRead(button)==HIGH){ // if button is pressed
+    if (motorflag==0) {             // and the status flag is LOW
+      motorflag=1;                  // make status flag HIGH
+      digitalWrite(motor,HIGH);     // and turn on the LED
+      }                           //
+    else {                        // otherwise...
+      motorflag=0;                  // make status flag LOW
+      digitalWrite(motor,LOW);      // and turn off the LED
+    }
+  delay(1000);                    // wait a sec for the 
+  }                               // hardware to stabilize
+}                                 // begin again
