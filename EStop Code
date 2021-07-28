@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-const int button = 8;            // GPIO 8 for the button
+const int button = 15;            // GPIO 8 for the button
 const int motor =6;                // GPIO 6 for the motor
 int motorflag=0;                   // motor status flag
 
@@ -21,6 +21,6 @@ void loop() {
       motorflag=0;                  // make status flag LOW
       digitalWrite(motor,LOW);      // and turn off the LED
     }
-  delay(1000);                    // wait a sec for the 
+  delay(1000);                    // wait a sec for the
   }                               // hardware to stabilize
 }                                 // begin again
