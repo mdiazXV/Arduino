@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-const int button = 15;            // GPIO 8 for the button
-const int motor =6;                // GPIO 6 for the motor
+const int button = 7;            // GPIO 8 for the button
+const int motor =11;                // GPIO 6 for the motor
 int motorflag=0;                   // motor status flag
 
 void setup() {
